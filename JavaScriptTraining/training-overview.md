@@ -10,6 +10,9 @@ Zawartość:
 
 * [Wprowadzenie](#wprowadzenie)
 * [Operatory](#operatory)
+* [Logika](#logika)
+* [Funkcje](#funkcje)
+* [Kolekcje](#kolekcje)
 
 ## Wprowadzenie
 
@@ -309,7 +312,190 @@ while (t < 10) {
     if (t % 2 == 0) continue;
     console.log(t)
 }
+````
+
+# Funkcje
+
+Funkcje są wykorzystywane kiedy mamy powtarzający się kod. Zamiast kopiować kodu w wielu miejscach w naszym programie wystarczy napisać odpowiednią funkcję i dokonywać jej wielokrotnego wywołania.
+
+## Normalne funkcje
+
+Przykład prostej funkcji nie przyjmującej żadnych argumentów.
+
+Wywołana funkcja wyświwetla zadeklarowany tekst.
+
+````javascript
+function hello(){
+    console.log("Hello")
+}
+hello()
+````
+
+Przykład funkcji przyjmującej dwa argumenty
+
+Funkcja wyświetka wynik dodawania
+
+````javascript
+function sum(firstNumber, secondNumber){
+    console.log(firstNumber + secondNumber)
+}
+sum(1,5)
+````
+Przykłąd funkcji zwracającej wartość. Zwracaną wartość można przypisać do zmiennej i wykorzystać w dalszej części działania kodu.
+
+````javascript
+function suma(firstNumber, secondNumber){
+    return firstNumber + secondNumber
+}
+let result = suma(1,5)
+console.log("Wynik dodawania 1  + 5 to " + result)
+````
+
+## Arrow function
+
+Arrow funcions to uproszczona forma zapisu funkcji,
+
+Funkcja przyjmująca dwa argumenty
+
+````javascript
+let dodawanie = (firstNumber, secondNumber) => console.log(firstNumber + secondNumber)
+dodawanie(2,9)
+
+````
+
+Funkcja przyjmująca jeden argument
+
+````javascript
+let square = a => console.log(a * a)
+square(5)
+````
+
+Funkcja nie przyjmujaca żadnych argumentów
+
+````javascript
+let hello2 = () => console.log("Joł madafaka")
+hello2()
+````
+
+# Kolekcje
+
+Kolekcje danych wykorzystywane są do uporządkowania danych w kodzie oraz ich przechowywania.
+
+## Array
+
+Podstawowy sposób na definiowanie tabeli
+````javascript
+let name = new Array();
+````
+
+Najpowszechniejszy sposób inicjowania tabeli
+````javascript
+let name = [];
+````
+
+Tabela z wpisanymi wartościami
+````javascript
+let name = ["Value 1", "Value 2"];
+````
+
+Odwołanie się do konkretnego elementu tabeli
+````javascript
+name[0]
+````
+
+Metoda dodająca element na końcu tablicy
+````javascript
+arrayTest.push("value");
+````
+
+Metoda dodaje element na początku tablicy
+````javascript
+arrayTest.unshift("value");
+````
+
+Metoda usuwa element na początku tablicy
+````javascript
+arrayTest.shift("value");
+````
+
+Metoda usuwa elementy z tablicy od wskazanego indeksu oraz ilość usuwanych elementów od tego indexu.
+````javascript
+arrayTest.splice(2,1)
+````
+
+````javascript
+arrayTest.splice(2,1)
+````
+
+````javascript
+for (let i = 0; i < arrayTest.length; i++){
+    console.log(arrayTest[i])
 }
 ````
 
-## Funkcje
+````javascript
+for(let name of names){
+    console.log(name)
+}
+````
+
+## Map
+
+Mapa to typ kolekcji który oprócz konkretnej przechowywanej wartości posiada przypisany do niej klucz. Klucze muszą być unikatowe. Klucze w mapie mogą być dowolnego typu. Mapa może przechowywać różne klucze w obrębie jednej mapy.
+
+
+Definicja Mapy i dodanie elementów
+````javascript
+let products = new Map()
+products.set(1, "Marchewka")
+products.set(2, "Mleko")
+products.set(3, "Ser")
+````
+
+Pętla wyświetlająca wszystkie produkty w mapie.
+````javascript
+for (let i = 1; i <= products.size; i++){
+    console.log(products.get(i))
+}
+````
+
+Metoda usuwa wskazany element
+````javascript
+products.delete(3)
+````
+
+Metoda sprawdza czy klucz istnieje.
+````javascript
+products.has(3)
+````
+
+## Set
+
+To prosta lista pojedyńczych unikalnych wartości.
+
+Definicja nowego setu:
+````javascript
+let setName = new Set();
+````
+
+Dodawanie wartości do setu:
+````javascript
+setName.add("string value")
+````
+
+Usuwanie wartości z setu:
+````javascript
+setName.delete("string value")
+````
+
+Sprawdzanie czy w secie istnieje dana wartość:
+````javascript
+setName.has("string value")
+````
+
+Pętla iterująca po wszystkich elementach setu.
+````javascript
+for (let nameList of newNames){
+    console.log(nameList)
+}
+````
