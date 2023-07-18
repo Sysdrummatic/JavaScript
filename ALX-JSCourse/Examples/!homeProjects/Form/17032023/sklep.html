@@ -1,0 +1,114 @@
+<script>
+  class Koszyk {
+    constructor() {
+      this.zakupy = new Map();
+    }
+
+    dodajProdukt(produkt, ilosc) {
+      if (this.zakupy.has(produkt)) {
+        let aktIlosc = this.zakupy.get(produkt) + ilosc;
+        this.zakupy.set(produkt, aktIlosc);
+        console.log(
+          `W koszyku znajdują się ${aktIlosc} szt. produktu ${produkt}.`
+        );
+      } else {
+        this.zakupy.set(produkt, ilosc);
+        console.log(
+          `Produkt: ${produkt} w ilości ${ilosc} sztuk został dodany.`
+        );
+      }
+    }
+
+    usunProdukt(produkt, ilosc) {
+      console.log(
+        `Jestem w metodzie i  przyjąłem produkt: ${produkt} i ilość: ${ilosc}`
+      );
+      let aktIlość = 0;
+      if (this.zakupy.get(produkt) > ilosc) {
+        let aktIlość = this.zakupy.get(produkt) - ilosc;
+        this.zakupy.set(produkt, aktIlość);
+      } else if (this.zakupy.get(produkt) == ilosc) {
+        this.zakupy.delete(produkt);
+      } else {
+        console.log(`Nie możesz usunąć ${ilosc} szt. z koszyka..`);
+      }
+    }
+  }
+
+  let koszyk = new Koszyk();
+
+  let sklep = new Map();
+  sklep.set("woda", 2.55);
+  sklep.set("sok", 1.55);
+  sklep.set("jogurt", 3.55);
+  sklep.set("cola", 5.75);
+  sklep.set("chleb", 6.55);
+  sklep.set("godnoćś", 6.66);
+
+  while (true) {
+    let menu = Number(
+      prompt(
+        "1-dodaj produkt, 2-pokaz zawartosc koszyka, 3-usun produkt, 4-kasa/koniec"
+      )
+    );
+    // #############   DODANIE PRODUKTU DO KOSZYKA    #############
+    if (menu == 1) {
+      let produkt = prompt("Podaj nazwe produktu:");
+
+      for (let key of sklep.keys()) {
+        if (key === produkt) {
+          let ilosc = Number(prompt("Podaj ilosc produktu:"));
+          koszyk.dodajProdukt(produkt, ilosc);
+          console.log(
+            `Dodano produkt ${produkt} w ilości ${ilosc} szt. do koszyka.`
+          );
+          break;
+        }
+      }
+    }
+    // #############   SPRAWDZENIE ZAWARTOŚCI KOSZYKA    #############
+    else if (menu == 2) {
+      console.log(`Zawartość koszyka:`);
+      console.log(koszyk.zakupy);
+      for (let key of koszyk.zakupy.keys()) {
+        console.log(`Produkt: ${key} Ilość: ${koszyk.zakupy.get(key)}`);
+      }
+    }
+    // #############   USUNIĘCIE PRODUKTU Z KOSZYKA    #############
+    else if (menu == 3) {
+      let produkt = prompt("Podaj nazwe produktu:");
+
+      for (let key of sklep.keys()) {
+        if (key == produkt) {
+          let ilosc = Number(prompt("Podaj ilosc produktu:"));
+          koszyk.usunProdukt(produkt, ilosc);
+          console.log(
+            `Usunięto produkt ${produkt} w ilości ${ilosc} szt. do koszyka.`
+          );
+          break;
+        }
+      }
+    }
+
+    // #############   WYŚWIETLENIE PARAGONU    #############
+    else if (menu == 4) {
+      //PARAGON:
+      let suma = 0;
+      console.log(`Paragon:`);
+      console.log(koszyk.zakupy);
+      for (let key of koszyk.zakupy.keys()) {
+        let razem = sklep.get(key) * koszyk.zakupy.get(key);
+
+        suma += razem;
+        console.log(
+          `Produkt: ${key}, Ilość: ${koszyk.zakupy.get(key)}, Cena: ${sklep.get(
+            key
+          )} PLN, Warotść: ${razem} PLN.`
+        );
+      }
+
+      console.log(`RAZEM DO ZAPŁATY: ${suma} PLN.`);
+      break;
+    }
+  }
+</script>

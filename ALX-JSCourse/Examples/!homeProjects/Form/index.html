@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Zgłoszenie reklamacyjne</title>
+  </head>
+  <body>
+    <div class="centerWindow">
+      <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
+
+      <div class="reklamujacy">
+        <h2>Reklamujący</h2>
+
+        <p class="radiobox">
+          <input type="radio" name="comfort" value="tak" /> Pan
+          <input type="radio" name="comfort" value="nie" /> Pani
+        </p>
+
+        <div class="rek-pozycja">
+          <div class="rek-col1">
+            <div class="opis">Imię</div>
+            <div class="opis">Nazwisko</div>
+            <div class="opis">Ulica</div>
+            <div class="opis">Kod pocztowy</div>
+            <div class="opis">Miejscowość</div>
+            <div class="opis">Nr telefonu</div>
+            <div class="opis">Adres email</div>
+          </div>
+          <div class="rek-col2">
+            <input class="poletekstowe" type="text" />
+            <input class="poletekstowe" type="text" />
+            <input class="poletekstowe" type="text" />
+            <input class="poletekstowekod" type="text" />
+            <input class="poletekstowe" type="text" />
+            <input class="poletekstowe" type="text" />
+            <input class="poletekstowe" type="text" />
+          </div>
+        </div>
+        <p class="checkbox">
+          Sposób powiadomienia
+          <input type="checkbox" name="meal1" value="appetizer" />
+          Telefon/SMS
+          <input type="checkbox" name="meal2" value="lunch" /> e-mail
+        </p>
+      </div>
+      <div class="produkt">
+        <h2>Reklamowany produkt</h2>
+        <div class="prod-pozycja">
+          <div class="prod-col1">
+          <div class="opis">Asortyment</div>
+          <div class="opis">Numer seryjny</div>
+          <div class="opis">Uwagi</div>
+        </div>
+        <div class="prod-col2">
+            <select class="poletekstowewybor" name="destinationPoint" class="data3">
+              </select>
+          <input class="poletekstowe" type="text" />
+          <input class="poletekstoweuwaga" type="text" />
+        </div>
+      </div>
+    </div>
+    <div class="dane">
+      <h2>Dane zgłoszenia</h2>
+      <div class="dane-pozycja">
+        <div class="dane-col1">
+          <div class="opis">Numer dokumentu zakupu</div>
+          <div class="opis">Data zakupu</div>
+          <div class="opis">Data powstania wady</div>
+          <div class="opis">Przyczyna reklamacji</div>
+          <div class="opis">Opis wady</div>
+          <div class="opisZadanie">Żądanie reklamującego</div>
+        </div>
+        <div class="dane-col2">
+          <div class="radio">
+            <input class="poletekstoweNr" type="text" />
+            <input class="poletekstoweData" type="text" />
+            <input class="poletekstoweWada" type="text" />
+            <input class="poletekstowePrzyczyna" type="text" />
+            <textarea class="textar"
+            name="remarks"
+            required
+          ></textarea>
+            <select class="poletekstowewybor" name="destinationPoint" class="data3">
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

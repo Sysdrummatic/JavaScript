@@ -1,0 +1,16 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Person</title>
+  </head>
+  <body>
+{{> header}}
+
+    <p>{{screamIt message}}</p> <!-- screamIt is a helper function defined in Web-server\app.js file and message is a variable defined in Web-server\app.js file and passed to the person.hbs file.  The screamIt function is defined in Web-server\app.js file and is used to convert the message to uppercase. -->
+
+{{> footer}}
+  </body>
+
+</html>

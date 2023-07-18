@@ -1,0 +1,36 @@
+<script>
+  class Produkt {
+    nazwa;
+    cena;
+
+    constructor(nazwa, cena) {
+      this.nazwa = nazwa;
+      this.cena = cena;
+    }
+  }
+
+  class Oprogramowanie extends Produkt {
+    constructor(nazwa, cena, jezyk, system) {
+      super(nazwa, cena);
+      this.jezyk = jezyk;
+      this.system = system;
+    }
+  }
+
+  class Szkolenia extends Oprogramowanie {
+    constructor(nazwa, cena, jezyk, system, termin) {
+      super(nazwa, cena, jezyk, system);
+      this.termin = termin;
+    }
+  }
+
+  let szkolenie = new Szkolenia(
+    "Programowanie JS",
+    100,
+    "polski",
+    "Windows",
+    "2019-02-16"
+  );
+
+  console.log(szkolenie);
+</script>

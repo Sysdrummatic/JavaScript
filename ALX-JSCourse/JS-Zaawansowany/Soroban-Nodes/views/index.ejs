@@ -1,0 +1,30 @@
+<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Suma liczb</title>
+  </head>
+  <body>
+    <h1>Wylosowane liczby:</h1>
+    <ul>
+      <% for (let i = 0; i < numbers.length; i++) { %>
+      <li><%= numbers[i] %></li>
+      <% } %>
+    </ul>
+
+    <% if (errorMessage) { %>
+    <p><%= errorMessage %></p>
+    <% } %>
+
+    <form action="/" method="post">
+      <label for="result">Wpisz sumę:</label>
+      <input type="text" id="result" name="result" />
+      <button type="submit">Wyślij</button>
+      <% for (let i = 0; i < numbers.length; i++) { %>
+      <input type="hidden" name="numbers[]" value="<%= numbers[i] %>" />
+      <% } %>
+    </form>
+  </body>
+</html>

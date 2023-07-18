@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>React złożone komponenty</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      #kontener {
+        padding: 50px;
+        background-color: #fff;
+      }
+      .cardList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .header {
+        text-align: center;
+        font-family: sans-serif;
+        color: #333;
+        font-weight: bold;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header">Wybierz swój wymarzony kolor!</h1>
+    <div id="kontener"></div>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class Square extends React.Component {
+        render() {
+          let squareStyle = {
+            height: 150,
+            backgroundColor: this.props.color,
+          };
+          return <div style={squareStyle}></div>;
+        }
+      }
+
+      class Label extends React.Component {
+        render() {
+          let labelStyle = {
+            fontSize: 20,
+            padding: 10,
+            margin: 0,
+            fontFamily: "sans-serif",
+            color: "#333",
+            fontWeight: "bold",
+            textAlign: "center",
+          };
+          return [
+            <p style={labelStyle}>{this.props.color}</p>,
+            <h4 style={labelStyle}>
+              {" "}
+              Jakaś treść: {(Math.random() * 100).toFixed(4)}
+            </h4>,
+          ];
+        }
+      }
+
+      class Card extends React.Component {
+        render() {
+          let cardStyle = {
+            width: 150,
+            height: 280,
+            backgroundColor: "#FFF",
+            padding: 10,
+            margin: 10,
+            border: "1px solid #666",
+            boxShadow: "0px 0px 5px #666",
+          };
+          return (
+            <div style={cardStyle}>
+              <Square color={this.props.color} />
+              <Label color={this.props.color} />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div className="cardList">
+          <Card color="#FF6663" />
+          <Card color="#FFA737" />
+          <Card color="#3F51B5" />
+          <Card color="#4CAF50" />
+        </div>,
+        destination
+      );
+    </script>
+  </body>
+</html>

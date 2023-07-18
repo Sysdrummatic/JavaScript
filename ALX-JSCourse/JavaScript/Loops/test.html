@@ -1,0 +1,73 @@
+<script>
+  for (var i = 0; i <= 10; i++) {
+    console.log(i);
+  }
+
+  for (var i = 0; i <= 10; i += 3) {
+    console.log(i);
+  }
+
+  for (var i = 1; i <= 5; i++) {
+    var liczba = prompt("Podaj liczbę:");
+    console.log(liczba);
+  }
+
+  for (var i = 0; i <= 10; i++) {
+    if (i % 2 == 0) {
+      console.log(i);
+    }
+  }
+
+  var i = 0;
+
+  while (i <= 10) {
+    console.log(i);
+    i++;
+  }
+
+  var los = Math.floor(Math.random() * 10);
+  console.log(los);
+
+  while (los != 6) {
+    var los = Math.floor(Math.random() * 10);
+    console.log(los);
+  }
+
+  do {
+    var los = Math.floor(Math.random() * 10);
+    console.log(los);
+  } while (los != 6);
+
+  for (var i = 0; i <= 100000000; i++) {
+    if (i == 5) {
+      break;
+    }
+
+    console.log(i);
+  }
+
+  while (true) {
+    var los = Math.floor(Math.random() * 10);
+    console.log(los);
+
+    if (i == 6) {
+      break;
+    }
+  }
+
+  for (var i = 0; i <= 10; i++) {
+    if (i == 5) {
+      continue;
+    }
+
+    console.log(i);
+  }
+
+  for (var i = 1; i <= 5; i++) {
+    var licza = Number(prompt(`Podaj liczbę dodatnią ${i}: `));
+    if (liczba > 0) {
+      break;
+    }
+    console.log(liczba);
+  }
+</script>

@@ -1,0 +1,16 @@
+<script>
+  let suma = new Map();
+
+  suma.set("jeden", 1);
+  suma.set("dwa", 2);
+  suma.set("trzy", 3);
+  suma.set("cztery", 4);
+  suma.set("pięć", 5);
+
+  let liczba1 = prompt("Podaj liczbę 1 z zakresu 1 - 5, słownie!");
+  let liczba2 = prompt("Podaj liczbę 2 z zakresu 1 - 5, słownie!");
+
+  let wynik = suma.get(liczba1) + suma.get(liczba2);
+
+  console.log(wynik);
+</script>

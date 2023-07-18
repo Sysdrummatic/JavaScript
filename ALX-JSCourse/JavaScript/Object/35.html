@@ -1,0 +1,17 @@
+<script>
+  class Sejf {
+    #kwota;
+
+    constructor() {
+      this.#kwota = Math.floor(Math.random() * 100) + 1;
+    }
+
+    getKwota() {
+      return this.#kwota;
+    }
+  }
+
+  let sejf = new Sejf();
+
+  console.log(sejf.getKwota());
+</script>

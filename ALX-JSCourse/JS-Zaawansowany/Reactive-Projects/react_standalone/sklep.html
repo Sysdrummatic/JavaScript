@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>React standalone - sklep</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      #kontener {
+        padding: 50px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+      let props = {
+        name: "Koszulka",
+        price: 29.99,
+        color: ["red"],
+        image:
+          "https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_960_720.jpg",
+      };
+
+      class Display extends React.Component {
+        render() {
+          return (
+            <div>
+              <p> {props.name} </p>
+              <p> {props.price} </p>
+              <p> {props.color} </p>
+              <img src={props.image} alt="Zdjęcie!" width="200" />
+            </div>
+          );
+        }
+      }
+
+      class Label extends React.Component {
+        render() {
+          return <Display {...props} />;
+        }
+      }
+
+      class Shirt extends React.Component {
+        render() {
+          return <Label {...props} />;
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <Shirt {...props} />
+        </div>,
+        destination
+      );
+    </script>
+    <div id="kontener"></div>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+body {
+  font-family: "Open Sans";
+  background-color: rgb(250, 250, 250);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+  margin: 50px;
+}
+
+h2 {
+  font-weight: 100;
+  margin: 0px 0px 5px 30px;
+  padding-top: 10px;
+}
+
+.reklamujacy,
+.produkt,
+.dane {
+  width: 1000px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0px 0px 10px 0.1px gray;
+  margin-bottom: 60px;
+}
+
+.centerWindow {
+  display: table-cell;
+  vertical-align: center;
+  width: 100vw;
+}
+
+.opis {
+  width: 200px;
+  height: 30px;
+  padding-top: 1px;
+  margin-bottom: 9px;
+}
+
+.poletekstowe {
+  width: 400px;
+}
+
+.poletekstowe,
+.poletekstowekod,
+.poletekstowewybor,
+.poletekstoweuwaga,
+.poletekstowePrzyczyna,
+.poletekstoweNr,
+.poletekstoweData,
+.poletekstoweWada,
+.poletekstoweOpis {
+  height: 30px;
+  border: 1px solid rgb(142, 163, 170);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.poletekstowewybor {
+  width: 500px;
+}
+
+.poletekstoweuwaga,
+.poletekstowePrzyczyna {
+  width: 600px;
+}
+
+/* Sekcja Reklamujący */
+
+.reklamujacy {
+  height: 500px;
+  border-left: 5px solid green;
+  /* padding: 20px 20px 20px 20px; */
+}
+
+.rek-pozycja {
+  display: flex;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.rek-col1 {
+  margin-left: 100px;
+  text-align: right;
+}
+
+.rek-col2 {
+  margin-left: 15px;
+  width: 500px;
+}
+
+.radiobox {
+  margin-left: 310px;
+}
+
+.checkbox {
+  margin-left: 135px;
+}
+
+.poletekstowekod {
+  width: 150px;
+}
+
+/* Sekcja Reklamowany produkt */
+
+.produkt {
+  height: 250px;
+  border-left: 5px solid gray;
+}
+
+.prod-pozycja {
+  display: flex;
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.prod-col1 {
+  margin-left: 100px;
+  text-align: right;
+}
+
+.prod-col2 {
+  margin-left: 15px;
+  width: 500px;
+}
+
+.poletekstowewybor {
+  width: 500px;
+}
+.poletekstoweuwaga {
+  width: 600px;
+}
+
+/* Dane zgłoszenia */
+
+.dane {
+  height: 450px;
+  border-left: 5px solid blue;
+  /* padding: 20px 20px 20px 20px; */
+}
+
+.dane-pozycja {
+  display: flex;
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.dane-col1 {
+  margin-left: 100px;
+  text-align: right;
+}
+
+.dane-col2 {
+  margin-left: 15px;
+  width: 600px;
+}
+
+.poletekstoweNr {
+  width: 300px;
+  margin-right: 400px;
+}
+
+.poletekstoweData {
+  margin-right: 400px;
+}
+
+.textar {
+  width: 600px;
+  height: 100px;
+  border: 1px solid rgb(142, 163, 170);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.opisZadanie {
+  padding-top: 500px;
+  width: 200px;
+  height: 30px;
+  margin-top: 82.5px;
+  padding-top: 1px;
+  margin-bottom: 9px;
+}
+
+/* Pozostałe */
+
+/* display: flex;
+flex-direction: row-reverse;
+justify-content: left;
+width: 1200px;
+margin: 0 auto; */
+
+/* h1 {
+  text-align: center;
+}
+
+h2 {
+}
+
+.centerWindow {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100vw;
+}
+
+.reklamujacy {
+  width: 300;
+  height: 600;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0.1px gray;
+  border-left: 5px solid green;
+}
+
+div.produkt {
+  width: 300;
+  height: 300;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0.1px gray;
+  border-left: 5px solid gray;
+}
+
+div.dane {
+  width: 300;
+  height: 300;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0.1px gray;
+  border-left: 5px solid blue;
+} */

@@ -1,0 +1,18 @@
+<%- include('naglowek') %>
+
+<ul>
+  <!-- instrukcje -->
+  <% wpisy.forEach(function(val,index) { %>
+
+  <li>
+    <b><%= val.tytul%></b>
+    <a href="/usun/<%= index %>">Usuń</a>
+    <a href="/edytuj/<%= index %>">Edytuj</a>
+
+    <p><%= val.tresc%></p>
+  </li>
+
+  <% }) %>
+</ul>
+
+<%- include('stopka') %>

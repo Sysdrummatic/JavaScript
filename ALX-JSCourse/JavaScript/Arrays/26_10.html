@@ -1,0 +1,13 @@
+<script>
+  let lista = [];
+
+  for (var i = 0; i < 5; i++) {
+    var imie = prompt(`Podaj imię użytkownika nr ${i + 1}:`);
+
+    lista.push(imie);
+  }
+
+  for (var i = 0; i < lista.length; i++) {
+    console.log(`Cześć ${lista[i]}!`);
+  }
+</script>

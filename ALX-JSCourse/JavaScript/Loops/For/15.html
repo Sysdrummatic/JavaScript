@@ -1,0 +1,15 @@
+<script>
+  var podstawa = Number(prompt("Podaj podstawę:"));
+  var potega = Number(prompt("Podaj potęgę:"));
+  var wynik = 1;
+
+  if (podstawa === 0) {
+    console.log("Podstawa nie może być równa 0!");
+  } else {
+    for (var i = 1; i <= potega; i++) {
+      wynik *= podstawa;
+    }
+
+    console.log(wynik);
+  }
+</script>

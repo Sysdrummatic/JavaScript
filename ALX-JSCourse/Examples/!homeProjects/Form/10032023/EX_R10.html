@@ -1,0 +1,73 @@
+<script>
+  const randNumberTable = [];
+  const mathOperation = ["+", "-", "*", "/"];
+  let goodGuess = 0;
+  let mistake = 0;
+
+  //Tworzymy tabelę losowych liczb.
+  for (let i = 1; i <= 10; i++) {
+    randomNumber = Math.floor(Math.random() * 100 + 1);
+    randNumberTable.push(randomNumber);
+  }
+
+  //Losujemy liczbę i rodzaj działania.
+  for (let i = 0; i < 10; i++) {
+    const randomNumber1 = Math.floor(Math.random() * randNumberTable.length);
+    const randomNumber2 = Math.floor(Math.random() * randNumberTable.length);
+    const randomOperation = Math.floor(Math.random() * mathOperation.length);
+
+    //Pobieramy odpowiedź od uzytkownika
+    let answer = Number(
+      prompt(
+        `Jaki jest wynik równania: ${randNumberTable[randomNumber1]} ${mathOperation[randomOperation]} ${randNumberTable[randomNumber2]}`
+      )
+    );
+
+    //Wykonywanie obliczeń
+
+    function doTheMath(number1, number2, operation) {
+      let result;
+
+      switch (operation) {
+        case "+":
+          result = number1 + number2;
+          break;
+        case "-":
+          result = number1 - number2;
+          break;
+        case "*":
+          result = number1 * number2;
+          break;
+        case "/":
+          result = number1 / number2;
+          break;
+      }
+
+      return result;
+    }
+
+    let mathDone = doTheMath(
+      randNumberTable[randomNumber1],
+      randNumberTable[randomNumber2],
+      mathOperation[randomOperation]
+    );
+
+    //Zliczanie poprawnych odpowiedzi
+    if (mathDone == answer) {
+      alert("Poprawniy wynik!");
+      goodGuess += 1;
+    } else {
+      alert("Błędny wynik");
+      mistake += 1;
+    }
+  }
+
+  //Podsumowanie
+  if (goodGuess === 10) {
+    alert(
+      `Gratulacje! Nie popełniłeś żadnego błędu! Poprawne odpowiedzi: ${goodGuess}, błędne odpowiedzi: ${mistake}!`
+    );
+  } else {
+    alert(`Poprawne odpowiedzi: ${goodGuess}, błędne odpowiedzi ${mistake}.`);
+  }
+</script>

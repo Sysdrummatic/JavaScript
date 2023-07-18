@@ -1,0 +1,154 @@
+<script>
+  class Pojazdy {
+    nazwa;
+    cena;
+    kolor;
+    odpalSilnik() {}
+  }
+
+  class Samolot extends Pojazdy {
+    pulap;
+
+    lec() {
+      console.log("LECĘ!!");
+    }
+  }
+
+  class Lodz extends Pojazdy {
+    wypornosc;
+
+    lec() {
+      console.log("Płynę!!!");
+    }
+  }
+
+  let samolot = new Samolot();
+  let lodz = new Lodz();
+  console.log(samolot);
+  console.log(lodz);
+
+  class A {
+    poleA;
+
+    construktor() {}
+
+    metodaA() {
+      console.log("Metoda A");
+    }
+
+    hello() {
+      console.log("Hello A");
+    }
+  }
+
+  class B extends A {
+    poleB;
+
+    metodaB() {
+      console.log("Metoda B");
+    }
+
+    hello() {
+      console.log("Hello B");
+      super.hello();
+    }
+  }
+
+  class C extends B {
+    poleC;
+
+    metodaC() {
+      console.log("Metoda C");
+    }
+
+    hello() {
+      console.log("Hello C");
+      super.hello();
+    }
+  }
+
+  let ob = new C();
+  console.log(ob);
+
+  ob.metodaA();
+  ob.metodaB();
+  ob.metodaC();
+
+  ob.hello();
+
+  class Pojazdy1 {
+    constructor(nazwa, cena) {
+      this.nazwa = nazwa;
+      this.cena = cena;
+    }
+  }
+
+  class Samolot1 extends Pojazdy1 {
+    constructor(nazwa, cena, pulap) {
+      super(nazwa, cena);
+      this.pulap = pulap;
+    }
+  }
+
+  class Awionetka1 extends Samolot1 {
+    constructor(nazwa, cena, pulap, paliwo) {
+      super(nazwa, cena, pulap);
+      this.paliwo = paliwo;
+    }
+  }
+
+  let ob1 = new Samolot1("757", 56789, 666);
+  console.log(ob1);
+  let ob2 = new Awionetka1("Hello", 5678, 666666, "LPG");
+  console.log(ob2);
+
+  class Bankomat {
+    #kasa; // pole prywatne, nie są dziedziczone.
+
+    constructor(nazwa, miasto) {
+      this.nazwa = nazwa;
+      this.miasto = miasto;
+      this.#kasa = 10000000000;
+    }
+
+    wyplac(ile, pin) {
+      if (pin == 1111) {
+        this.#kasa -= ile;
+      } else {
+        console.log("bledny pin");
+      }
+    }
+
+    // umożliwiają dostanie się do pól prywatnych
+    // getter
+    getKasa() {
+      return this.#kasa;
+    }
+    // setter
+    setKasa(ile) {
+      this.#kasa = ile;
+    }
+
+    #metodaPrywatna() {
+      console.log("Teren prywatny");
+    }
+  }
+
+  let euronet = new Bankomat("Euronet", "KRK");
+  console.log(euronet);
+  euronet.wyplac(100, 1111);
+  console.log(euronet);
+  euronet.kasa = 10;
+  console.log(euronet);
+</script>
+
+<script>
+  ja = {
+    imie: "Robert",
+    hello: function () {
+      console.log("Hello!");
+    },
+  };
+
+  log;
+</script>

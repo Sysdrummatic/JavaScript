@@ -1,0 +1,100 @@
+<script>
+  class Pracownik {
+    constructor(imie, nazwisko, email, telefon) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+      this.email = email;
+      this.telefon = telefon;
+    }
+  }
+
+  let pracownik1 = new Pracownik(
+    "Łukasz",
+    "Michta",
+    "lukaszmichta@gmail.com",
+    "506034580"
+  );
+
+  let pracownik2 = new Pracownik(
+    "Tomasz",
+    "Plichta",
+    "tomaszmichta@gmail.com",
+    "507414698"
+  );
+
+  let tabelaPracownikow = [];
+
+  tabelaPracownikow.push(pracownik1);
+  tabelaPracownikow.push(pracownik2);
+
+  // Od Robera
+
+  let listaPracownikow = [];
+
+  listaPracownikow.push(pracownik1);
+  listaPracownikow.push(pracownik2);
+
+  while (true) {
+    let menu = Number(prompt("1-dodaj, 2-pokaz, 3-usun, 4-zmien, 5-koniec"));
+
+    if (menu == 1) {
+      let imie = prompt("Podaj imie:");
+      let nazwisko = prompt("Podaj nazwisko:");
+      let email = prompt("Podaj email:");
+      let telefon = prompt("Podaj telefon:");
+
+      let pracownik = new Pracownik(imie, nazwisko, email, telefon);
+      listaPracownikow.push(pracownik);
+      console.log(
+        `Pracownik ${pracownik.imie} ${pracownik.nazwisko} został dodany`
+      );
+    } else if (menu == 2) {
+      for (x of listaPracownikow) {
+        console.log(
+          `Imię: ${x.imie}, Nazwiko: ${x.nazwisko}, Email: ${x.email}, Telefon: ${x.telefon}.`
+        );
+      }
+
+      //Imię: ... Nazwisko: ... Email: ... Telefon: ...
+      //Imię: ... Nazwisko: ... Email: ... Telefon: ...
+      //Imię: ... Nazwisko: ... Email: ... Telefon: ...
+    } else if (menu == 3) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let istnieje = false;
+
+      for (let x in listaPracownikow) {
+        if (listaPracownikow[x].nazwisko == nazwisko) {
+          istnieje = true;
+          listaPracownikow.splice(x, 1);
+          console.log("Pracownik usunięty!");
+          break;
+        }
+
+        if (istnieje == false) {
+          console.log(`Brak pracownika o nazwisku ${nazwisko}`);
+        }
+      }
+    } else if (menu == 4) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let noweImie = prompt("Podaj nowe imie:");
+      let noweNazwisko = prompt("Podaj nowe nazwisko:");
+      let nowyEmail = prompt("Podaj nowy email:");
+      let nowyTelefon = prompt("Podaj nowy telefon:");
+
+      for (let x in listaPracownikow) {
+        if (listaPracownikow[x].nazwisko == nazwisko) {
+          listaPracownikow[x].imie = noweImie;
+          listaPracownikow[x].nazwisko = noweNazwisko;
+          listaPracownikow[x].email = nowyEmail;
+          listaPracownikow[x].telefon = nowyTelefon;
+
+          // kontakty.splice(wyswietl, 1); Spróbuj zrobić to na dwóch splice'ach
+          // kontakty.splice(wyswietl, 0, noweImie);
+          break;
+        }
+      }
+    } else if (menu == 5) {
+      break;
+    }
+  }
+</script>

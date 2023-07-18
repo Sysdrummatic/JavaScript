@@ -1,0 +1,23 @@
+<script>
+  var min;
+  var max;
+
+  for (var i = 1; i <= 3; i++) {
+    var liczba = Number(prompt(`Podaj liczbę ${i}:`));
+
+    if (i === 1) {
+      min = liczba;
+      max = liczba;
+    }
+
+    if (liczba < min) {
+      min = liczba;
+    }
+
+    if (liczba > max) {
+      max = liczba;
+    }
+  }
+
+  console.log(` Wartości min: ${min} i max: ${max}`);
+</script>

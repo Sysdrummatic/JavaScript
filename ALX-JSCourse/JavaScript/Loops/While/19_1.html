@@ -1,0 +1,25 @@
+<script>
+  var los = Math.floor(Math.random() * 100) + 1;
+  console.log(los);
+  var liczba;
+  var liczbaProb = 0;
+
+  while (liczba !== los && liczbaProb <= 5) {
+    liczba = Number(prompt("Podaj liczbę:"));
+
+    if (liczba < 1 || liczba > 100) {
+      console.log("Podaj liczbę");
+    } else if (liczba < los) {
+      console.log("za mała");
+    } else if (liczba > los) {
+      console.log("za duża");
+    }
+    liczbaProb++;
+  }
+
+  if (liczbaProb === 5 && los != liczba) {
+    console.log("Przegrałeś");
+  } else {
+    console.log("Wygrałeś");
+  }
+</script>

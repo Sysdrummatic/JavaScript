@@ -1,0 +1,30 @@
+<script>
+  var wiek = -50;
+
+  /*
+0 - 9 dziecko
+10 - 17 młodzież
+18 - 70 dorosły
+> 70 starszy
+*/
+
+  if (wiek < 0) {
+    console.log("błędny wiek");
+  } else if (wiek >= 0 && wiek <= 9) {
+    console.log("dziecko");
+  } else if (wiek > 9 && wiek <= 17) {
+    console.log("młodzież");
+  } else if (wiek >= 18 && wiek <= 70) {
+    console.log("dorosły");
+  } else if (wiek > 70) {
+    console.log("starszy");
+  }
+
+  var liczba = 2;
+
+  if (liczba % 2 === 0) {
+    console.log("Liczba parzysta");
+  } else {
+    console.log("Liczba nieparzysta");
+  }
+</script>

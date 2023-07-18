@@ -1,0 +1,20 @@
+<script>
+  let zdanie = prompt("Podaj zdanie:");
+  let litery = new Map();
+
+  for (let i = 0; i < zdanie.length; i++) {
+    let litera = zdanie[i];
+    if (litery.has(litera)) {
+      litery.set(litera, litery.get(litera) + 1);
+    } else {
+      litery.set(litera, 1);
+    }
+    // console.log(litera);
+    // console.log(litery);
+    // console.log(zdanie[i]);
+  }
+
+  litery.forEach((ilosc, litera) => {
+    console.log(`Literka ${litera} występuje ${ilosc} razy.`);
+  });
+</script>

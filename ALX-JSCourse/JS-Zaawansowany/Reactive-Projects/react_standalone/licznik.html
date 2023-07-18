@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>React standalone - sklep</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #kontener {
+        padding: 0px;
+        margin: 0 auto;
+        background-color: #e2ded9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class Counter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            count: 0,
+          };
+          this.timerTick = this.timerTick.bind(this);
+        }
+
+        timerTick() {
+          this.setState((prevState) => {
+            return { count: prevState.count + 1 };
+          });
+        }
+
+        componentDidMount() {
+          setInterval(this.timerTick, 1000);
+        }
+
+        render() {
+          return <h2>{this.state.count}</h2>;
+        }
+      }
+
+      class Display extends React.Component {
+        render() {
+          let divStyle = {
+            width: 200,
+            backgroundColor: "#FFEF86",
+            fontSize: "40px",
+            color: "#112A46",
+            padding: 40,
+            fontFamily: "sans-serif",
+            borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+          };
+
+          return (
+            <div style={divStyle}>
+              <Counter />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <Display />
+        </div>,
+        destination
+      );
+    </script>
+    <div id="kontener"></div>
+  </body>
+</html>

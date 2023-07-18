@@ -1,0 +1,49 @@
+<script>
+  let liczby = [];
+
+  for (let i = 0; i < 10; i++) {
+    liczby.push(Math.floor(Math.random() * 100 + 1));
+  }
+
+  console.log(liczby);
+
+  while (true) {
+    let posortowane = true;
+    for (let i = 0; i < liczby.length - 1; i++) {
+      if (liczby[i] > liczby[i + 1]) {
+        posortowane = false;
+        let temp = liczby[i];
+        liczby[i] = liczby[i + 1];
+        liczby[i + 1] = temp;
+      }
+    }
+
+    console.log(liczby);
+    if (posortowane == true) {
+      break;
+    }
+  }
+</script>
+
+<script>
+  for (let i = 0; i < 10; i++) {
+    liczby.push(Math.floor(Math.random() * 100 + 1));
+  }
+
+  let posortowane = [];
+
+  for (let i = 1; i <= 10; i++) {
+    let index = 0;
+    let min = liczby[index];
+
+    for (let z in liczby) {
+      if (liczby[x] < min) {
+        index = x;
+        min = liczby[x];
+      }
+    }
+
+    posortowane.push(min);
+    liczby.splice(index, 1);
+  }
+</script>

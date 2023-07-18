@@ -1,0 +1,28 @@
+<script>
+  let zbior = new Set();
+  let los;
+  let licznik = 0;
+
+  while (true) {
+    los = Math.floor(Math.random() * 10) + 1;
+
+    if (true !== zbior.has(los)) {
+      zbior.add(los);
+    }
+
+    if (zbior.size == 6) {
+      break;
+    }
+
+    licznik++;
+
+    // console.log(zbior.size);
+    // console.log(los);
+  }
+
+  for (let x of zbior) {
+    console.log(x);
+  }
+
+  console.log(`Prób: ${licznik}`);
+</script>

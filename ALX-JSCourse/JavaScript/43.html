@@ -1,0 +1,14 @@
+<script>
+  var waga = Number(prompt("Podaj wagę: "));
+  var wzrost = Number(prompt("Podaj wzrostu: "));
+
+  var bmi = waga / (wzrost * wzrost);
+
+  if (bmi >= 18.5 && bmi <= 24.9) {
+    console.log("Prawidłowa waga");
+  } else if (bmi < 18.5) {
+    console.log("Niedowaga");
+  } else {
+    console.log("Nadwaga");
+  }
+</script>

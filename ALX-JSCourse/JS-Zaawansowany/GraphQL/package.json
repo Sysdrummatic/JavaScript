@@ -1,0 +1,16 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "Uzależnione od silnego typowania. - Sprawdzić.",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Łukasz Michta",
+  "license": "ISC",
+  "dependencies": {
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "micro": "^9.3.4"
+  }
+}

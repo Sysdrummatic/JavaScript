@@ -1,0 +1,56 @@
+<script>
+  let sklep = new Map();
+
+  sklep.set("sok", 2.25);
+  sklep.set("kefir", 23.25);
+
+  sklep.set("mleko", 12.25);
+
+  sklep.set("por", 42.25);
+
+  console.log(sklep);
+
+  console.log(sklep.get("kefir"));
+
+  //odczytywanie
+  sklep.size;
+
+  for (let x of sklep) {
+    console.log(x[0], x[1]);
+  }
+
+  let tablicaKluczy = sklep.keys();
+
+  for (let x of sklep.keys()) {
+    console.log(x, sklep.get(x));
+  }
+
+  sklep.forEach((x) => {
+    console.log(x);
+  });
+
+  sklep.forEach((x, y) => {
+    console.log(x, y);
+  });
+
+  // sprawdzenie czy klucz istnieje w mapie.
+
+  console.log(sklep.has("woda"));
+
+  //modyfikacja
+
+  sklep.set("cola", 1234);
+
+  //rozmiar mapy
+
+  sklep.size;
+
+  //usuwanie z mapy
+
+  sklep.delete("cola");
+
+  let mapa = new Map([
+    ["sok", 24],
+    ["cola", 23],
+  ]);
+</script>

@@ -1,0 +1,36 @@
+<script>
+  var imie = ["Ola", "Tomasz", "Wojtek"];
+  imie[3] = "Jola";
+
+  imie[imie.length] = "Jola";
+
+  imie.push("Jola"); //Wkłada element na koniec tabplicy
+
+  imie.unshift("Jola"); // Wkłada element na początek tablicy
+
+  imie.pop(); // Usuwa ostatni element tablicy
+  imie.shift(); // Usuwa pierwszą wartość z tablicy
+
+  imie.splice(1, 1); // Ustaw się na elemencie tablicy o indeksie 1 i usuwa jeden element.
+  imie.splice(3, 5); // Ustaw się na elemencie tablicy o indeksie 3 i usuwa 5 element.
+
+  imie.splice(1, 0, "Robert"); // ustaw sięna elemencie o indexie 1, nie usuwaj, wstaw wartość.
+
+  // pętla idealna do odczytu tablicy
+  for (let x of dane) {
+    /// x tutaj występuje jako parametr umożliwiający dostęp do tablicy, jak i w powyższej lętli
+    console.log(x);
+  }
+
+  //pętla pokazująca indeksy
+  for (let x in dane) {
+    /// x tutaj występuje jako parametr umożliwiający dostęp do tablicy, jak i w powyższej lętli
+    console.log(x, dane[x]);
+  }
+
+  for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 5; j++) {
+      console.log(i, j);
+    }
+  }
+</script>

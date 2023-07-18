@@ -1,0 +1,123 @@
+<script>
+  class Kursant {
+    constructor(imie, nazwisko) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+    }
+  }
+
+  class Kurs {
+    constructor(nazwa) {
+      this.nazwa = nazwa;
+      this.listaKursantow = [];
+    }
+  }
+
+  let listaKursow = [];
+
+  let kursJS = new Kurs("Kurs JS");
+  let kursPython = new Kurs("Kurs Python");
+  listaKursow.push(kursJS);
+  listaKursow.push(kursPython);
+
+  while (true) {
+    let menu = Number(
+      prompt(
+        "1-dodaj kurs, 2-pokaz kursy, 3-usun kurs, 4-dodaj kursanta do kursu, 5-wyswietl kurs wraz z kursantami, 6-usun kursanta z kursu, 7-koniec"
+      )
+    );
+
+    if (menu == 1) {
+      let nazwa = prompt("Podaj nazwe kursu:");
+
+      let kurs = new Kurs(nazwa);
+      listaKursow.push(kurs);
+      console.log(`${kurs.nazwa} został dodany.`);
+    } else if (menu == 2) {
+      for (x of listaKursow) {
+        console.log(`Nazwa: ${x.nazwa}`);
+      }
+    } else if (menu == 3) {
+      let nazwa = prompt("Podaj nazwe kursu:");
+      let istnieje = false;
+      //ALE !!!! usunac kurs mozna tylko wtedy kiedy nie ma w nim kursantow
+
+      for (let x in listaKursow) {
+        if (
+          listaKursow[x].nazwa == nazwa &&
+          listaKursow[x].listaKursantow.length == 0 //.length == 0
+        ) {
+          istnieje = true;
+          listaKursow.splice(x, 1);
+          console.log("Kurs usunięty usunięty!");
+          break;
+        } else {
+          console.log(`Nie można usunąć kursu : ${listaKursow[x].nazwa}.`);
+        }
+
+        if (istnieje == false) {
+          console.log(`Brak kursu: ${nazwa}`);
+        }
+      }
+    } else if (menu == 4) {
+      let nazwa = prompt("Podaj nazwe kursu:");
+      let imie = prompt("Podaj imie kursanta:");
+      let nazwisko = prompt("Podaj nazwisko kursanta:");
+
+      for (let x in listaKursow) {
+        if (listaKursow[x].nazwa == nazwa) {
+          let kursant = new Kursant(imie, nazwisko);
+          listaKursow[x].listaKursantow.push(kursant);
+
+          console.log(`Kursant ${imie} ${nazwisko} został dodany do kursu.`);
+          break;
+        }
+      }
+    } else if (menu == 5) {
+      let nazwa = prompt("Podaj nazwe kursu:");
+
+      for (let x in listaKursow) {
+        if (listaKursow[x].nazwa == nazwa) {
+          console.log(`Kurs: ${listaKursow[x].nazwa}`);
+          for (let kursant of listaKursow[x].listaKursantow) {
+            console.log(`Imie: ${kursant.imie} ${kursant.nazwisko}`);
+          }
+        }
+      }
+
+      //Kurs: .......
+      //Imię: ... Nazwisko: ....
+      //Imię: ... Nazwisko: ....
+      //Imię: ... Nazwisko: ....
+    } else if (menu == 6) {
+      let nazwa = prompt("Podaj nazwe kursu:");
+      let nazwisko = prompt("Podaj nazwisko kursanta:");
+      let istnieje = false;
+
+      for (let x in listaKursow) {
+        if (
+          listaKursow[x].nazwa == nazwa &&
+          listaKursow[x].listaKursantow.length !== 0
+        ) {
+          //   console.log("Tu teraz jesteś");
+          //   console.log(listaKursow[x].listaKursantow);
+
+          for (kursant in listaKursow[x].listaKursantow) {
+            if (listaKursow[x].listaKursantow[kursant].nazwisko == nazwisko) {
+              listaKursow[x].listaKursantow.splice(kursant, 1);
+              istnieje = true;
+              console.log("Kursant został usunięty!");
+              break;
+            }
+          }
+
+          if (istnieje == false) {
+            console.log(`Kursant ${nazwisko} nie istnieje.`);
+          }
+        }
+      }
+    } else if (menu == 7) {
+      break;
+    }
+  }
+</script>

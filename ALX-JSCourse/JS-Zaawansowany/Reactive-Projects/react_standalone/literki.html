@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Standalone</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <style>
+    #kontener {
+      padding: 50px;
+      background-color: #fff;
+    }
+    .letter {
+      display: inline-block;
+      width: 50px;
+      height: 60px;
+      background-color: #ffde00;
+      color: #000;
+      font-size: 40px;
+      font-family: monospace;
+      text-align: center;
+      line-height: 60px;
+      margin: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+  <body>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+      class Literka extends React.Component {
+        render() {
+          return <div className="letter">{this.props.children}</div>; // this.props.children to jest to co jest wewnątrz komponentu. W tym przypadku to jest literka wewnątrz komponentu Literka (np. <Literka>Ł</Literka>) i jest ona wyświetlana w divie
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <Literka>Ł</Literka>
+          <Literka>U</Literka>
+          <Literka>K</Literka>
+          <Literka>A</Literka>
+          <Literka>S</Literka>
+          <Literka>Z</Literka>
+        </div>,
+        destination
+      );
+    </script>
+    <div id="kontener"></div>
+  </body>
+</html>

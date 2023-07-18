@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>React standalone - sklep</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      #kontener {
+        padding: 50px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class Display extends React.Component {
+        render() {
+          return <br />;
+        }
+      }
+
+      ReactDOM.render(<div></div>, destination);
+    </script>
+    <div id="kontener"></div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<script>
+  const randNumberTable = [];
+  const duplicateNumTable = new Set();
+
+  //Random numbers table initialization
+  for (let i = 0; i < 10; i++) {
+    let randNum = Math.floor(Math.random() * 10 + 1);
+    randNumberTable.push(randNum);
+  }
+
+  console.log(randNumberTable);
+
+  //Dublicate check
+  for (let i = 0; i < randNumberTable.length; i++) {
+    for (let j = 0; j < randNumberTable.length; j++) {
+      if (randNumberTable[i] === randNumberTable[j] && i !== j) {
+        duplicateNumTable.add(randNumberTable[i]);
+      }
+    }
+  }
+
+  console.log(duplicateNumTable);
+</script>

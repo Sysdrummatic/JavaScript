@@ -1,0 +1,22 @@
+<script>
+  var liczba;
+  var los1;
+  var los2;
+  var iloczyn;
+
+  for (var i = 1; i <= 5; i++) {
+    los1 = Math.floor(Math.random() * 10) + 1;
+    los2 = Math.floor(Math.random() * 10) + 1;
+    iloczyn = los1 * los2;
+
+    do {
+      liczba = Number(prompt(`Ile to jest: ${los1} * ${los2}?`));
+
+      if (liczba == iloczyn) {
+        break;
+      }
+    } while (true);
+
+    console.log(liczba);
+  }
+</script>

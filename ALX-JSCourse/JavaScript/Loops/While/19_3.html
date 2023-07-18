@@ -1,0 +1,41 @@
+<script>
+  var suma = 0;
+  var licznik = 0;
+  var srednia = 0;
+  var liczbyParzyste = 0;
+  var liczbyNieparzyste = 0;
+  var liczbaMin = 0;
+  var liczbaMax = 0;
+
+  liczba = Number(prompt("Podaj liczbę:"));
+
+  liczbaMin = liczba;
+  liczbaMax = liczba;
+
+  while (liczba !== 0) {
+    if (liczba !== 0) {
+      suma += liczba;
+      licznik++;
+    }
+    if (liczba % 2 === 0) {
+      liczbyParzyste++;
+    } else {
+      liczbyNieparzyste = licznik - liczbyParzyste;
+    }
+    if (liczba < liczbaMin) {
+      liczbaMin = liczba;
+    }
+
+    if (liczba > liczbaMax) {
+      liczbaMax = liczba;
+    }
+
+    liczba = Number(prompt("Podaj liczbę:"));
+  }
+
+  srednia = suma / licznik;
+
+  console.log(
+    `Podałeś ${licznik} liczb, których suma wynosi ${suma}, a średnia ${srednia}. W podanym zbiorze znajduje się ${liczbyParzyste} liczb parzystych oraz ${liczbyNieparzyste} liczb nieparzystych. Minimalna liczba to ${liczbaMin}, a maksymalna to ${liczbaMax}.`
+  );
+</script>

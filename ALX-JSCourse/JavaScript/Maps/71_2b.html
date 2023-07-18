@@ -1,0 +1,54 @@
+<script>
+  let sklep = new Map();
+  sklep.set("sok", 2.55);
+  sklep.set("woda", 1.55);
+  sklep.set("cola", 3.55);
+
+  let koszyk = [];
+
+  while (true) {
+    let menu = Number(
+      prompt("1-dodaj koszyka, 2-podglad koszyka, 3-kasa/koniec")
+    );
+
+    if (menu == 1) {
+      let produkt = prompt("Podaj produkt:");
+      //do koszyka dodajemy produkt tylko wtedy kiedy produkt istnieje w sklepie, w przeciewn razie info
+
+      if (sklep.has(produkt)) {
+        koszyk.push(produkt);
+      } else {
+        console.log("Brakuje produktu");
+      }
+    } else if (menu == 2) {
+      for (x of koszyk) {
+        console.log(`Produkt: ${x}`);
+      }
+    } else if (menu == 3) {
+      console.log("PARAGON");
+
+      //Produkt: ....... Cena: .....
+      //Produkt: ....... Cena: .....
+      //Produkt: ....... Cena: .....
+      //Produkt: ....... Cena: .....
+      //Produkt: ....... Cena: .....
+      //RAZEM DO ZAPLATY: ...... PLN
+
+      let suma = 0;
+      koszyk.forEach((x) => {
+        console.log(`Produkt: ${x} Cena: ${sklep.get(x)}`);
+        suma = suma + sklep.get(x);
+      });
+
+      console.log(`RAZEM DO ZAPŁATY: ${suma} PLN`);
+
+      break;
+    } else {
+      console.log("bledna opcja menu !");
+    }
+  }
+</script>
+
+<!-- for (let x of koszyk) {
+    console.log(x[0], x[1]);
+  } -->

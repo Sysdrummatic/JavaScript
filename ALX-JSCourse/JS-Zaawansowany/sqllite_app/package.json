@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "lorem-ipsum": "^2.0.8",
+    "sqlite3": "^5.1.6"
+  }
+}

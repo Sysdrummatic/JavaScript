@@ -1,0 +1,38 @@
+<script>
+  var li1 = 2;
+  var li2 = 3;
+
+  //   function licz(liczba1, liczba2, dzialanie)
+
+  licz = (liczba1, liczba2, dzialanie) => {
+    if (dzialanie == "+") {
+      var wynik = liczba1 + liczba2;
+
+      return `Wynik dodawania to ${wynik}.`;
+    } else if (dzialanie == "-") {
+      var wynik = liczba1 - liczba2;
+
+      return `Wynik odejmowania to ${wynik}.`;
+    } else if (dzialanie == "*") {
+      var wynik = liczba1 * liczba2;
+
+      return `Wynik mnożenia to ${wynik}.`;
+    } else if (dzialanie == "/") {
+      var wynik = liczba1 / liczba2;
+
+      return `Wynik dzielenia to ${wynik}.`;
+    } else if (dzialanie == "%") {
+      var wynik = liczba1 % liczba2;
+
+      return `Wynik dzielenia to ${wynik}.`;
+    } else {
+      return `Niepoprawny operator matematyczny.`;
+    }
+  };
+
+  console.log(licz(li1, li2, "+"));
+  console.log(licz(li1, li2, "-"));
+  console.log(licz(li1, li2, "*"));
+  console.log(licz(li1, li2, "/"));
+  console.log(licz(li1, li2, "%"));
+</script>

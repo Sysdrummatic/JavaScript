@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="07a-modif.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="centerWindow">
+      <div class="hello">
+        <div>
+          <h1>Formularz rezerwacji biletu lotniczego</h1>
+        </div>
+        <div>
+          <form method="get">
+            <p class="typeadata">
+              <span>Twoje imię:</span>
+                
+              <input
+                class="data1"
+                type="text"
+                name="name"
+                placeholder="Wpisz imię."
+                autofocus
+                required
+              />
+            </p>
+            <p class="typeadata">
+                <span>Twoje nazwisko:</span>
+              <input
+                class="data1"
+                type="text"
+                name="lastName"
+                placeholder="Wpisz nazwisko."
+                required
+              />
+            </p>
+            <p class="typeadata">
+                <span>Data wyloty:</span>
+              <input
+                class="data2"
+                type="date"
+                name="departureDate"
+                placeholder="Wpisz datę wylotu."
+                required
+              />
+            </p>
+
+            <p class="typeadata">
+                <span>Wylot z:</span>
+              <select name="originPoint" class="data3">
+                <option value="">-- wybierz --</option>
+                <option value="m1">Kraków</option>
+                <option value="m2">Gdańsk</option>
+                <option value="m3">Sosnowiec</option>
+                <option value="m3">Katowice</option>
+              </select>
+            </p>
+
+            <p class="typeadata">
+                <span>Przylot do:</span>
+              <select name="destinationPoint" class="data3">
+                <option value="">-- wybierz --</option>
+                <option value="m1">Kraków</option>
+                <option value="m2">Gdańsk</option>
+                <option value="m3">Sosnowiec</option>
+                <option value="m3">Katowice</option>
+              </select>
+            </p>
+
+            <p>
+                <span>Klasa VIP:</span>
+              <input type="radio" name="comfort" value="tak" /> Tak
+              <input type="radio" name="comfort" value="nie" /> Nie
+            </p>
+            <p>
+              Posiłek:
+              <input type="checkbox" name="meal1" value="appetizer" />
+              Przystawka
+              <input type="checkbox" name="meal2" value="lunch" /> Obiad
+              <input type="checkbox" name="meal3" value="dessert" /> Deser
+            </p>
+            <p>
+              <textarea
+                name="remarks"
+                placeholder="Wpisz swoje uwagi."
+                required
+              ></textarea>
+            </p>
+
+            <div class="buttons">
+              <button class="button" type="submit">Zarezerwuj</button>
+              <button class="button" type="reset">Anuluj</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="wrapper">
+      
+    </div> -->
+  </body>
+</html>

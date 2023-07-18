@@ -1,0 +1,26 @@
+<script>
+  let suma = 0;
+  let liczba = 0;
+  let srednia = 0;
+
+  liczba = Number(prompt("Podaj liczbę:"));
+
+  let tablicaLiczb = [];
+
+  while (liczba !== 0) {
+    tablicaLiczb.push(liczba);
+
+    liczba = Number(prompt("Podaj liczbę:"));
+  }
+
+  for (let i = 0; i < tablicaLiczb.length; i++) {
+    suma += tablicaLiczb[i];
+    console.log(tablicaLiczb[i]);
+  }
+
+  srednia = suma / tablicaLiczb.length;
+
+  console.log(
+    `Podałeś ${tablicaLiczb.length} liczb, których suma wynosi ${suma}, a średnia ${srednia}.`
+  );
+</script>

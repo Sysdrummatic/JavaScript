@@ -1,0 +1,40 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1129&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  background-color: grey;
+  color: white;
+  margin: 20px;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+}
+
+p.paragraf1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+div {
+  background-color: silver;
+  border: 2px solid black;
+  margin: 20px;
+  text-align: right;
+}
+footer {
+  border: 1px solid blue;
+  margin: 10px;
+  padding: 20px;
+}
+
+span {
+  font-size: 24px;
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,24 @@
+<script>
+  let side1 = Number(prompt("Podaj długość pierwszego boku prostokąta."));
+  let side2 = Number(prompt("Podaj długość drugiego boku prostokąta."));
+  let exType = Number(
+    prompt(
+      "Wpisz: 1 - by obliczyć pole prostokąta, 2 - by obliczyć obwód. Wartość podaj w cm."
+    )
+  );
+
+  let area;
+  let perimeter;
+
+  while (true) {
+    if (exType === 1) {
+      area = side1 * side2;
+      console.log(`Pole prostokąta to: ${area} cm.`);
+    } else if (exType === 2) {
+      perimeter = 2 * side1 + 2 * side2;
+      console.log(`Obwód prostokąta to: ${perimeter} cm.`);
+    } else {
+      console.log("Podałeś błędną wartość!");
+    }
+  }
+</script>

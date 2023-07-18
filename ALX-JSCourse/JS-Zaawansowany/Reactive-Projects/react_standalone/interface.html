@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>React standalone - sklep</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      #kontener {
+        padding: 50px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class Circle extends React.Component {
+        render() {
+          let circleStyle = {
+            width: 100,
+            height: 100,
+            backgroundColor: this.props.bgcolor,
+            color: "#999",
+            padding: 40,
+            margin: 20,
+            fontFamily: "sans-serif",
+            borderRadius: "50%",
+            textAlign: "center  ",
+          };
+
+          return <div style={circleStyle}></div>;
+        }
+      }
+
+      class Display extends React.Component {
+        render() {
+          return <br />;
+        }
+      }
+
+      let theCircle = <Circle bgcolor="yellow" />;
+
+      let theCircle2 = <Circle bgcolor="blue" />;
+
+      let theCircle3 = <Circle bgcolor="green" />;
+
+      // function showRandomColorCircle() {
+      //   let colorTab = [
+      //     "red",
+      //     "green",
+      //     "blue",
+      //     "yellow",
+      //     "orange",
+      //     "purple",
+      //     "brown",
+      //     "pink",
+      //     "black",
+      //     "gray",
+      //     "cyan",
+      //     "magenta",
+      //     "lime",
+      //     "maroon",
+      //     "navy",
+      //     "olive",
+      //     "teal",
+      //     "aqua",
+      //     "fuchsia",
+      //   ];
+      //   let randomColor = colors[Math.floor(Math.random() * colors.length)];
+      //   return;
+
+      //   <Circle bgcolor={colors[randomColor]} />;
+      // }
+
+      let colorTab = [
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "orange",
+        "purple",
+        "brown",
+        "pink",
+        "black",
+        "gray",
+        "cyan",
+        "magenta",
+        "lime",
+        "maroon",
+        "navy",
+        "olive",
+        "teal",
+        "aqua",
+        "fuchsia",
+      ];
+      let data = [];
+      for (let i = 0; i < colorTab.length; i++) {
+        let color = colorTab[i];
+        data.push(<Circle key={colorTab[i]} bgcolor={color} />);
+      }
+
+      ReactDOM.render(<div>{data}</div>, destination);
+    </script>
+    <div id="kontener"></div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "calc-nodes",
+  "version": "1.0.0",
+  "description": "Simple Calc-APP",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sysdrummatic/ALX-JavaScript.git#master"
+  },
+  "author": "Łukasz Michta",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Sysdrummatic/ALX-JavaScript/issues"
+  },
+  "homepage": "https://github.com/Sysdrummatic/ALX-JavaScript/tree/master#readme",
+  "dependencies": {
+    "yargs": "^17.7.1"
+  }
+}

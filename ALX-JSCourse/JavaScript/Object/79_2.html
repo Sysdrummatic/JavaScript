@@ -1,0 +1,110 @@
+<script>
+  class Student {
+    constructor(imie, nazwisko) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+      this.oceny = [];
+    }
+  }
+
+  let student1 = new Student("Łukasz", "Michta");
+  let student2 = new Student("Tomasz", "Plichta");
+
+  let listaStudentow = [];
+
+  listaStudentow.push(student1);
+  listaStudentow.push(student2);
+
+  while (true) {
+    let menu = Number(
+      prompt(
+        "1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-edytuj studenta, 5-dodaj ocene studentowi, 6-wypisz oceny studenta, 7-wypisz studentow wraz ze srednia, 8-koniec"
+      )
+    );
+
+    if (menu == 1) {
+      let imie = prompt("Podaj imie:");
+      let nazwisko = prompt("Podaj nazwisko:");
+
+      let student = new Student(imie, nazwisko);
+      listaStudentow.push(student);
+    } else if (menu == 2) {
+      for (x of listaStudentow) {
+        console.log(`Imię: ${x.imie}, Nazwiko: ${x.nazwisko}.`);
+      }
+
+      //Imię: ... Nazwisko: ...
+      //Imię: ... Nazwisko: ...
+      //Imię: ... Nazwisko: ...
+    } else if (menu == 3) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let istnieje = false;
+
+      for (let x in listaStudentow) {
+        if (listaStudentow[x].nazwisko == nazwisko) {
+          istnieje = true;
+          listaStudentow.splice(x, 1);
+          console.log("Student usunięty");
+          break;
+        }
+
+        if (istnieje == false) {
+          console.log(`Brak studenta o nazwisku: ${nazwisko}.`);
+        }
+      }
+    } else if (menu == 4) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let noweImie = prompt("Podaj nowe imie:");
+      let noweNazwisko = prompt("Podaj nowe nazwisko:");
+
+      for (let x in listaStudentow) {
+        if (listaStudentow[x].nazwisko == nazwisko) {
+          listaStudentow[x].imie = noweImie;
+          listaStudentow[x].nazwisko = noweNazwisko;
+          break;
+        }
+      }
+    } else if (menu == 5) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let ocena = Number(prompt("Podaj ocenę:"));
+
+      for (let x in listaStudentow) {
+        if (listaStudentow[x].nazwisko == nazwisko) {
+          listaStudentow[x].oceny.push(ocena);
+          console.log(`Dodano ocenę ${ocena}`);
+          break;
+        }
+      }
+    } else if (menu == 6) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      for (let x in listaStudentow) {
+        if (listaStudentow[x].nazwisko == nazwisko) {
+          console.log(`Oceny: ${listaStudentow[x].oceny}`);
+          break;
+        }
+      }
+    } else if (menu == 7) {
+      let srednia = 0;
+
+      for (x in listaStudentow) {
+        let suma = 0;
+        for (ocena of listaStudentow[x].oceny) {
+          suma += ocena;
+        }
+
+        srednia = suma / listaStudentow[x].oceny.length;
+
+        console.log(
+          `Imię: ${listaStudentow[x].imie}, Nazwiko: ${listaStudentow[x].nazwisko}, Średnia ocen: ${srednia}.`
+        );
+      }
+
+      //Imię: ... Nazwisko: ... Srednia ocen: ...
+      //Imię: ... Nazwisko: ... Srednia ocen: ...
+      //Imię: ... Nazwisko: ... Srednia ocen: ...
+      //Imię: ... Nazwisko: ... Srednia ocen: ...
+    } else if (menu == 8) {
+      break;
+    }
+  }
+</script>

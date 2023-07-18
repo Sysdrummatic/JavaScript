@@ -1,0 +1,27 @@
+<script>
+  class Student {
+    static ile = 0; // to jest zmienna statyczna.
+
+    constructor(imie, nazwisko) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+      this.number = Student.ile++;
+    }
+  }
+
+  console.log(Student.ile);
+
+  let ob1 = new Student("A1", "B");
+  let ob2 = new Student("A2", "B");
+  let ob3 = new Student("A3", "B");
+  let ob4 = new Student("A4", "B");
+  let ob5 = new Student("A5", "B");
+
+  console.log(Student.ile);
+
+  console.log(ob1.number);
+  console.log(ob2.number);
+  console.log(ob3.number);
+  console.log(ob4.number);
+  console.log(ob5.number);
+</script>

@@ -1,0 +1,29 @@
+<script>
+  const randNumTable = [];
+
+  //Random numbers table initialization
+  for (let i = 0; i < 10; i++) {
+    const randNum = Math.floor(Math.random() * 100 + 1);
+    randNumTable.push(randNum);
+  }
+
+  //Function sorting table
+  function sortTheTab(tab) {
+    for (let i = 0; i < tab.length; i++) {
+      let min = i;
+      for (let j = i + 1; j < tab.length; j++) {
+        if (tab[j] < tab[min]) {
+          min = j;
+        }
+      }
+      const supConst = tab[i];
+      tab[i] = tab[min];
+      tab[min] = supConst;
+    }
+    return tab;
+  }
+
+  const sortedTab = sortTheTab(randNumTable);
+
+  console.log(sortedTab);
+</script>

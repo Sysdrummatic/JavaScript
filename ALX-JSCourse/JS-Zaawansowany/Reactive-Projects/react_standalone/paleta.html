@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>React złożone komponenty</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+      }
+
+      #nawBar {
+        width: 100%;
+        height: 100px;
+        background-color: #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+      }
+
+      #kontener {
+        margin-top: 500px;
+        padding: 500px;
+        background-color: #692323;
+      }
+      .cardList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .header {
+        text-align: center;
+        font-family: sans-serif;
+        color: #333;
+        font-weight: bold;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nawBar"></div>
+
+    <div id="kontener"></div>
+
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class NawBar extends React.Component {
+        render() {
+          let navStyle = {
+            width: "100%",
+            height: 50,
+            backgroundColor: "#333",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          };
+          let navItemStyle = {
+            color: "#FFF",
+            fontSize: 20,
+            padding: 10,
+            margin: 10,
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
+            textDecoration: "none",
+          };
+          return (
+            <div style={navStyle}>
+              <a href="#" style={navItemStyle}>
+                Home
+              </a>
+              <a href="#" style={navItemStyle}>
+                About
+              </a>
+              <a href="#" style={navItemStyle}>
+                Contact
+              </a>
+            </div>
+          );
+        }
+      }
+
+      class Square extends React.Component {
+        render() {
+          let squareStyle = {
+            height: 150,
+            backgroundColor: this.props.color,
+          };
+          return <div style={squareStyle}></div>;
+        }
+      }
+
+      class Label extends React.Component {
+        render() {
+          let labelStyle = {
+            fontSize: 20,
+            padding: 10,
+            margin: 0,
+            fontFamily: "sans-serif",
+            color: "#333",
+            fontWeight: "bold",
+            textAlign: "center",
+          };
+          return <p style={labelStyle}>{this.props.color}</p>;
+        }
+      }
+
+      class Card extends React.Component {
+        render() {
+          let cardStyle = {
+            width: 150,
+            height: 200,
+            backgroundColor: "#FFF",
+            padding: 10,
+            margin: 10,
+            border: "1px solid #666",
+            boxShadow: "0px 0px 5px #666",
+          };
+          return (
+            <div style={cardStyle}>
+              <Square color={this.props.color} />
+              <Label color={this.props.color} />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <div className="navBar">
+            <NawBar />
+          </div>
+          <div className="cardList">
+            <Card color="#FF6663" />
+            <Card color="#FFA737" />
+            <Card color="#3F51B5" />
+            <Card color="#4CAF50" />
+          </div>
+        </div>,
+        destination
+      );
+    </script>
+  </body>
+</html>

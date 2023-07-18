@@ -1,0 +1,31 @@
+<script>
+  var li1 = Number(prompt("Podaj liczbę 1"));
+  var li2 = Number(prompt("Podaj liczbę 2"));
+  var sign = prompt("Wybierz typ działania: + - * /");
+  var result;
+
+  switch (sign) {
+    case "+":
+      result = li1 + li2;
+      console.log(`Wynik to: ${result}`);
+
+      break;
+    case "-":
+      result = li1 - li2;
+      console.log(`Wynik to: ${result}`);
+
+      break;
+    case "*":
+      result = li1 * li2;
+      console.log(`Wynik to: ${result}`);
+
+      break;
+    case "/":
+      result = li1 / li2;
+      console.log(`Wynik to: ${result}`);
+
+      break;
+    default:
+      console.log("Błąd");
+  }
+</script>

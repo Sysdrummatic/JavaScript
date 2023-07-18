@@ -1,0 +1,94 @@
+<script>
+  function hello() {}
+
+  hello();
+
+  function licz(a = 0, b = 0, c = 0, d = 0, e = 0) {
+    var suma = a + b + c + d + e;
+    console.log(suma);
+  }
+
+  licz(2, 3, 54, 2, 1);
+  licz(2, 3, 54, 2);
+  licz(2, 3, 54);
+  licz(2, 3);
+  licz(2);
+  licz();
+
+  function zwracajaca() {
+    //instrukcja
+    return;
+  }
+
+  function niezwracajaca() {
+    //instrukcja
+  }
+
+  function sprawdz(liczba) {
+    var wynik1;
+    var wynik2;
+
+    if (liczba > 0) {
+      wynik2 = "++";
+    } else {
+      wynik2 = "--- lub 0";
+    }
+
+    if (liczba % 2 == 0) {
+      return ["parz", wynik2];
+    } else {
+      return ["nieparz", wynik2];
+    }
+  }
+
+  // Różne warianty funkcji strzałkowych
+
+  function myFun() {
+    alert("Hello");
+  }
+
+  myFun = () => {
+    alert("Hello");
+  };
+
+  function fun(a) {
+    return a + a;
+  }
+
+  fun = (a) => {
+    return a + a;
+  };
+
+  function fun1(a, b) {
+    return a + b;
+  }
+
+  fun1 = (a, b) => {
+    return a + b;
+  };
+
+  function fun3() {
+    return "Hello";
+  }
+
+  fun3 = () => "Hello";
+
+  // let poprawia zakres widoczności zmian
+  // Stałe piszemy wielką literą
+
+  let tab = [23, 24, 255];
+
+  const x = [23, 45, 68]; // Const nie działa dal zmiennych tablicowych.
+  console.log(x);
+
+  x.push(100);
+  console.log(x);
+
+  x[1] = 100;
+
+  let a = [11, 22, 33];
+  let b = a;
+  a[1] = 100;
+
+  // String to typ sekwencyjny napisowy/nie mutowalny
+</script>

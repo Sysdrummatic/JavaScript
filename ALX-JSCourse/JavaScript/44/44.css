@@ -1,0 +1,57 @@
+body {
+  font-family: Lato;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+#tresc {
+  margin-left: 350px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+#menu {
+  position: fixed;
+  top: 10px;
+  width: 300px;
+}
+
+#menu ul li {
+  list-style: none;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dotted gray;
+}
+
+#stopka {
+  border-top: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+}
+
+.ilustracja {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  float: right;
+}
+
+.ilustracja p {
+  text-align: center;
+}
+
+.wiersz {
+  font-style: italic;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  padding-left: 80px;
+  color: rgb(72, 61, 139);
+}

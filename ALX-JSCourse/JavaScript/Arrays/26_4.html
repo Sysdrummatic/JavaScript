@@ -1,0 +1,71 @@
+<script>
+  let kontakty = [];
+
+  while (true) {
+    let menu = Number(prompt("1-dodaj, 2-pokaz, 3-usun, 4-zmien, 5-koniec"));
+
+    //Wprowadzanie danych
+    if (menu == 1) {
+      let imie = prompt("Podaj imie:");
+      let nazwisko = prompt("Podaj nazwisko:");
+      let telefon = prompt("Podaj telefon:");
+
+      let kontakt = [imie, nazwisko, telefon];
+      kontakty.push(kontakt);
+      console.log("Kontakt został pomyślnie dodany");
+
+      //Wyświetlanie kontaktów
+    } else if (menu == 2) {
+      console.log(kontakty);
+
+      for (let wyswietl of kontakty) {
+        console.log(
+          `Imię: ${wyswietl[0]} Nazwisko: ${wyswietl[1]} Telefon: ${wyswietl[2]}`
+        );
+      }
+
+      //Usuwanie
+    } else if (menu == 3) {
+      let nazwisko = prompt("Podaj nazwisko:");
+
+      //   for (let wyswietl in kontakty) {
+      //     let kontakt = kontakty[wyswietl];
+
+      //     if (kontakt[1] == nazwisko) {
+      //       kontakty.splice(wyswietl, 1);
+      //       break;
+      //     }
+      //   }
+
+      for (let wyswietl in kontakty) {
+        if (kontakty[wyswietl][1] == nazwisko) {
+          kontakty.splice(wyswietl, 1);
+          break;
+        }
+      }
+
+      //Edycja rekordu
+    } else if (menu == 4) {
+      let nazwisko = prompt("Podaj nazwisko:");
+      let noweImie = prompt("Podaj nowe imie:");
+      let noweNazwisko = prompt("Podaj nowe nazwisko:");
+      let nowyTelefon = prompt("Podaj nowy telefon:");
+
+      for (let wyswietl in kontakty) {
+        if (kontakty[wyswietl][1] == nazwisko) {
+          kontakty[wyswietl][0] = noweImie;
+          kontakty[wyswietl][1] = noweNazwisko;
+          kontakty[wyswietl][2] = nowyTelefon;
+
+          // kontakty.splice(wyswietl, 1); Spróbuj zrobić to na dwóch splice'ach
+          // kontakty.splice(wyswietl, 0, noweImie);
+          break;
+        }
+      }
+    }
+    //Zakończenie programu
+    else if (menu == 5) {
+      break;
+    }
+  }
+</script>

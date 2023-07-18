@@ -1,0 +1,26 @@
+<script>
+  let rectangleArea;
+  let circleArea;
+  let areaOf = Number(
+    prompt("Pole jakiej fugury chcesz obliczyć? 1 - prostokąt, 2 - koło.")
+  );
+
+  if (areaOf === 1) {
+    let side1 = Number(prompt("Podaj bok nr 1:"));
+    let side2 = Number(prompt("Podaj bok nr 2:"));
+
+    rectangleArea = side1 * side2;
+    alert(`Pole prostokąta to: ${rectangleArea}.`);
+    console.log(`Pole prostokąta to: ${rectangleArea}.`);
+  } else if (areaOf === 2) {
+    let radius = Number(prompt("Podaj promień:"));
+
+    circleArea = Math.PI * radius * radius;
+    alert(`Pole koła to: ${circleArea}.`);
+    console.log(`Pole koła to: ${circleArea}.`);
+  } else {
+    alert("Zła wartość");
+  }
+
+  //Rozwinąć pomysł o pętlę, która ponownie pyta o wartość do podania.
+</script>

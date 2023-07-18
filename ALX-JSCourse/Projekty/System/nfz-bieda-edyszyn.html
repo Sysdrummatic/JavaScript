@@ -1,0 +1,161 @@
+<script>
+  // #############   KLASY    ############
+
+  class Przychodnia {
+    constructor(nazwa, miasto) {
+      this.nazwa = nazwa;
+      this.miasto = miasto;
+      this.listaPacjentow = new Map();
+    }
+    dodajPacjenta(imie, nazwisko) {
+      if (this.listaPacjentow.has(nazwisko)) {
+        console.log(
+          `${this.listaPacjentow.get(
+            nazwisko
+          )} ${nazwisko} istnieje na liście pacjentów przychodni`
+        );
+      } else {
+        this.listaPacjentow.set(nazwisko, imie);
+        console.log(
+          `${this.listaPacjentow.get(
+            nazwisko
+          )} ${nazwisko} został dodany do listy pacjentów.`
+        );
+      }
+    }
+  }
+
+  class Pacjent {
+    constructor(imie, nazwisko) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+      this.listaChorob = new Set();
+    }
+    dodajChorobę(nazwaChoroby) {
+      if (this.listaChorob.has(nazwaChoroby)) {
+        console.log(`${nazwaChoroby} występuje na liście chorób pacjenta.`);
+      } else {
+        this.listaChorob.add(nazwaChoroby);
+        console.log(`${nazwaChoroby} została dodana do listy chorób pacjenta.`);
+      }
+    }
+  }
+
+  // #############   DANE    #############
+
+  // Przychodnie
+
+  let przychodnia1 = new Przychodnia("Przychodnia publiczna nr 1", "Sosnowiec");
+  let przychodnia2 = new Przychodnia(
+    "Przychodnia prywatna nr 3",
+    "Częstochowa"
+  );
+  let przychodnia3 = new Przychodnia(
+    "Przychodnia publiczna nr 2",
+    "Pażymiechy Górne k. Wypizdowa Dolnego"
+  );
+  // Dane testowe, nie wykorzystane z poprzedniej koncepcji
+  let przychodnie2 = new Map([
+    [przychodnia1.nazwa, przychodnia1.miasto],
+    [przychodnia2.nazwa, przychodnia2.miasto],
+    [przychodnia3.nazwa, przychodnia3.miasto],
+  ]);
+
+  let przychodnie = [przychodnia1, przychodnia2, przychodnia3];
+
+  // Pacjenci
+
+  let pacjent1 = new Pacjent("Eren", "Yeager");
+  let pacjent2 = new Pacjent("Levi", "Ackerman");
+  let pacjent3 = new Pacjent("Ervin", "Smith");
+
+  przychodnia1.listaPacjentow.set(pacjent1.nazwisko, pacjent1.imie);
+  przychodnia1.listaPacjentow.set(pacjent2.nazwisko, pacjent2.imie);
+  przychodnia2.listaPacjentow.set(pacjent3.nazwisko, pacjent3.imie);
+
+  // #############   FUNKCJE    ##########
+
+  // #############   MENU    #############
+
+  while (true) {
+    let menu = Number(
+      prompt(
+        "Witamy w systemie obsługi przychodni NFZ. Zazwyczaj nie działa więc YOLO! W razie jak by zadziałał: Wybierz 1 - aby zarządzać przychodzniami, wybierz 2 - aby zarządzać pacjetami, wybierz 0 aby zakończyć i dać nam spokój!"
+      )
+    );
+
+    if (menu == 1) {
+      //instrukcje
+      while (true) {
+        let menuPrzychodnie = Number(
+          prompt(
+            "1 - dodaj nową przychodznię, 2 - dodaj pacjenta, 3 - lista przychodni, 4 - lista pacjentów w przychodni, 0 - wyjdź."
+          )
+        );
+
+        if (menuPrzychodnie == 1) {
+          let nazwaPrzychodni = prompt("Podaj nazwe przychodni:");
+          for (przychodnia of przychodnie) {
+            if (przychodnia.nazwa === podanaPrzychodnia) {
+              let miastoPrzychodni = prompt("Podaj lokalizację przychodni:");
+              let nowaPrzychodnia = new Przychodnia();
+            }
+          }
+
+          //instrukcje
+        } else if (menuPrzychodnie == 2) {
+          //instrukcje
+
+          dodajPacjenta();
+        } else if (menuPrzychodnie == 3) {
+          //instrukcje
+          console.log(`LISTA PRZYCHODNI NFZ:`);
+          for (przychodnia of przychodnie) {
+            console.log(
+              `${przychodnia.nazwa} w miejscowości ${przychodnia.miasto} posiada aktualny kontrakt NFZ.`
+            );
+          }
+        } else if (menuPrzychodnie == 4) {
+          //instrukcje
+          let podanaPrzychodnia = prompt("Podaj nazwe przychodni:");
+          console.log(podanaPrzychodnia);
+          for (let przychodnia of przychodnie) {
+            if (przychodnia.nazwa === podanaPrzychodnia) {
+              console.log(`Pacjenci placówki ${przychodnia.nazwa}:`);
+              for (let pacjent of przychodnia.listaPacjentow.keys()) {
+                console.log(
+                  `Imie: ${przychodnia.listaPacjentow.get(
+                    pacjent
+                  )}, Nazwisko: ${pacjent}`
+                );
+              }
+            }
+          }
+        } else if (menuPrzychodnie == 0) {
+          break;
+        }
+      }
+    } else if (menu == 2) {
+      //instrukcje
+
+      while (true) {
+        let menuPacjenci = Number(
+          prompt("1 - dodaj chorobę, 2 - lista chorób pacjenta, 0 - wyjdź.")
+        );
+
+        if (menuPacjenci == 1) {
+          //instrukcje
+        } else if (menuPacjenci == 2) {
+          //instrukcje
+        } else if (menuPacjenci == 0) {
+          break;
+        }
+      }
+    } else if (menu == 0) {
+      alert(
+        "To twoja najwłaściwsza decyzja! Oceń APPKĘ na www.zatwójhajsbalujemy.gov.pl!"
+      );
+      break;
+    }
+  }
+</script>

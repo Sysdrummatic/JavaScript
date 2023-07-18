@@ -1,0 +1,14 @@
+<script>
+  let liczba = prompt("Podaj liczbe: "); // "3542" czy 3542
+
+  let zamiana = new Map();
+  zamiana.set("1", "jeden");
+  zamiana.set("2", "dwa");
+  zamiana.set("3", "trzy");
+  zamiana.set("4", "cztery");
+  zamiana.set("5", "pięć");
+
+  for (let x of liczba) {
+    console.log(zamiana.get(x));
+  }
+</script>

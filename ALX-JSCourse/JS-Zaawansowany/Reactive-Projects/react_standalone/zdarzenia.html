@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React standalone - sklep</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #kontener {
+        padding: 0px;
+        margin: 0 auto;
+        background-color: #e2ded9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="kontener"></div>
+    <script type="text/babel">
+      let destination = document.querySelector("#kontener");
+
+      class Counter extends React.Component {
+        render() {
+          let counterStyle = {
+            margin: "0 auto",
+            padding: "16px",
+            fontSize: "64px",
+            fontFamily: "sans-serif",
+            color: "#333",
+            fontWeight: "bold",
+            display: "block",
+            textAlign: "center",
+          };
+          return <div style={counterStyle}>{this.props.count}</div>;
+        }
+      }
+
+      class CounterParent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            count: 0,
+            shiftPressed: false,
+          };
+        }
+
+        render() {
+          let backgroundStyle = {
+            width: 200,
+            backgroundColor: this.state.count >= 20 ? "#FF8787" : "#FFEF86",
+            fontSize: "40px",
+            color: "#112A46",
+            padding: 40,
+            fontFamily: "sans-serif",
+            borderRadius: 20,
+            textAlign: "center",
+            boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+          };
+          let buttonStyle = {
+            width: 40,
+            height: 40,
+            backgroundColor: "#7DBCFF",
+            fontSize: "15px",
+            color: "#112A46",
+            padding: 5,
+            fontFamily: "sans-serif",
+            borderRadius: 20,
+            border: "none",
+
+            textAlign: "center  ",
+            margin: 5,
+            boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+          };
+          return (
+            <div
+              style={backgroundStyle}
+              onKeyDown={(event) => {
+                if (event.key === "Shift") {
+                  this.setState({ shiftPressed: true });
+                }
+              }}
+              onKeyUp={(event) => {
+                if (event.key === "Shift") {
+                  this.setState({ shiftPressed: false });
+                }
+              }}
+              tabIndex="0"
+            >
+              <h2>{this.state.count}</h2>
+              <button
+                style={buttonStyle}
+                onClick={() => {
+                  if (this.state.shiftPressed) {
+                    this.setState((prevState) => ({
+                      count: prevState.count + 10,
+                    }));
+                  } else {
+                    this.setState((prevState) => ({
+                      count: prevState.count + 1,
+                    }));
+                  }
+                }}
+              >
+                +
+              </button>
+              <button
+                style={buttonStyle}
+                onClick={() => {
+                  if (this.state.shiftPressed) {
+                    this.setState((prevState) => ({
+                      count: prevState.count - 10,
+                    }));
+                  } else {
+                    this.setState((prevState) => ({
+                      count: prevState.count - 1,
+                    }));
+                  }
+                }}
+              >
+                -
+              </button>
+            </div>
+          );
+        }
+
+        incrementCount() {
+          this.setState((prevState) => {
+            return {
+              count: prevState.count + 1,
+            };
+          });
+        }
+
+        decrementCount() {
+          this.setState((prevState) => {
+            return {
+              count: prevState.count - 1,
+            };
+          });
+        }
+      }
+
+      class Display extends React.Component {
+        render() {
+          return <h1>To jest mega fajny licznik!</h1>;
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <CounterParent />
+        </div>,
+        destination
+      );
+    </script>
+  </body>
+</html>

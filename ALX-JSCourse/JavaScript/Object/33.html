@@ -1,0 +1,39 @@
+<script>
+  class Samolot {
+    // nazwa;
+    // pulap;
+    // iloscPas;
+
+    constructor(nazwa, pulap, iloscPas) {
+      this.nazwa = nazwa;
+      this.pulap = pulap;
+      this.iloscPas = iloscPas;
+    }
+
+    info() {
+      console.log(this.nazwa, this.pulap, this.iloscPas);
+    }
+  }
+
+  let samolot1 = new Samolot("F16", 18000, 2);
+  let samolot2 = new Samolot("Mig-28", 18000, 2);
+  let samolot3 = new Samolot("F116", 20000, 2);
+
+  //   samolot1.nazwa = "F16";
+  //   samolot1.pulap = 18000;
+  //   samolot1.iloscPas = 2;
+
+  //   samolot2.nazwa = "Mig-28";
+  //   samolot2.pulap = 18000;
+  //   samolot2.iloscPas = 2;
+
+  //   samolot3.nazwa = "F116";
+  //   samolot3.pulap = 20000;
+  //   samolot3.iloscPas = 2;
+
+  console.log(samolot1.nazwa, samolot1.pulap, samolot1.iloscPas);
+  console.log(samolot1.nazwa, samolot1.pulap, samolot1.iloscPas);
+  console.log(samolot1.nazwa, samolot1.pulap, samolot1.iloscPas);
+
+  samolot1.info();
+</script>

@@ -1,0 +1,187 @@
+<script>
+  //Pierwsze obiekty
+
+  let samolot1 = {
+    nazwa: "F15",
+    pulap: 1000,
+    iloscPas: 2,
+
+    lec: function () {
+      console.log("LECE!!!");
+    },
+
+    laduj: function () {
+      console.log("LADUJE!!!");
+    },
+
+    info: function () {
+      console.log(this.nazwa, this.pulap, this.iloscPas);
+    },
+  };
+
+  let samolot2 = {
+    nazwa: "Avionetka",
+    pulap: 1000,
+    iloscPas: 2,
+
+    lec: function () {
+      console.log("LECE!!!");
+    },
+
+    laduj: function () {
+      console.log("LADUJE!!!");
+    },
+  };
+
+  lodz = {
+    nazwa: "Titanic",
+    wypornosc: 1000,
+    iloscPas: 2000,
+
+    plyn: function () {
+      console.log("PLYNE!!!");
+    },
+  };
+
+  console.log(samolot1.nazwa);
+  console.log(samolot2.nazwa);
+  console.log(samolot1.info());
+
+  // Klasy
+
+  class Auto {
+    marka;
+    model;
+    kolor;
+    iloscPas;
+    paliwo;
+  }
+
+  let auto1 = new Auto();
+
+  auto1.marka = "BMW";
+  auto1.model = "X5";
+  auto1.kolor = "zielony";
+  auto1.iloscPas = 5;
+  auto1.paliwo = "ON";
+
+  let auto2 = new Auto();
+
+  auto2.marka = "Mitsubishi";
+  auto2.model = "Outlander";
+  auto2.kolor = "złoty";
+  auto2.iloscPas = 5;
+  auto2.paliwo = "ON";
+
+  let auto3 = new Auto();
+
+  auto3.marka = "Jeep";
+  auto3.model = "Wrangler Rubikon";
+  auto3.kolor = "czarny";
+  auto3.iloscPas = 5;
+  auto3.paliwo = "ON";
+
+  let auto4 = new Auto();
+
+  auto4.marka = "Fiat";
+  auto4.model = "500";
+  auto4.kolor = "Biały";
+  auto4.iloscPas = 4;
+  auto4.paliwo = "95";
+
+  console.log(auto1);
+  console.log(auto2);
+  console.log(auto3);
+  console.log(auto4);
+
+  // Konstruktor
+
+  class Auto2 {
+    // marka;
+
+    // model;
+    // kolor;
+    // iloscPas;
+    // paliwo;
+
+    constructor(_marka, _model, _kolor, _iloscPas, _paliwo) {
+      this.marka = _marka;
+      this.model = _model;
+      this.kolor = _kolor;
+      this.iloscPas = _iloscPas;
+      this.paliwo = _paliwo;
+    }
+  }
+
+  let auto5 = new Auto2("BMW", "X6", "Czerwony", 5, "OM");
+
+  console.log(auto5);
+
+  class Osoba {
+    constructor(imie, nazwisko) {
+      this.imie = imie;
+      this.nazwisko = nazwisko;
+      this.oceny = [];
+    }
+
+    przedstawSie() {
+      console.log(`Nazywam się ${this.imie} ${this.nazwisko} ${this.oceny}`);
+    }
+
+    podajSrednia() {
+      let suma = 0;
+      for (let x of this.oceny) {
+        suma += x;
+      }
+
+      let iloscOcen = this.oceny.length;
+      let srednia = suma / iloscOcen;
+
+      console.log(`Srednia moja ${this.imie} to ${srednia}`);
+    }
+  }
+
+  let os1 = new Osoba("Adam", "Michalski");
+  let os2 = new Osoba("Zosia", "Nowak");
+
+  os1.oceny.push(3);
+  os1.oceny.push(2);
+  os1.oceny.push(5);
+
+  os2.oceny.push(5);
+  os2.oceny.push(5);
+  os2.oceny.push(5);
+
+  os.podajSrednia();
+
+  class Auto {
+    constructor(marka, model) {
+      this.marka = marka;
+      this.model = model;
+      this.predkosc = 0;
+    }
+
+    przyspiesz() {
+      this.predkosc += 10;
+    }
+
+    zwolnij() {
+      this.predkosc -= 10;
+    }
+  }
+
+  let ob1 = new Auto("Mazda", 323);
+  let ob2 = new Auto("Opel", "Zafira");
+
+  console.log(ob1.marka, ob1.model, ob1.predkosc);
+  console.log(ob2.marka, ob2.model, ob2.predkosc);
+
+  ob1.przyspiesz();
+  ob1.przyspiesz();
+  ob1.przyspiesz();
+  ob2.przyspiesz();
+
+  console.log("#################################################");
+  console.log(ob1.marka, ob1.model, ob1.predkosc);
+  console.log(ob2.marka, ob2.model, ob2.predkosc);
+</script>

@@ -1,0 +1,107 @@
+<script>
+  // Definicja elementów przechowujących dane.
+  // Mapy
+  let sklep = new Map();
+  sklep.set("woda", 2.55);
+  sklep.set("sok", 1.55);
+  sklep.set("jogurt", 3.55);
+  sklep.set("cola", 5.75);
+  sklep.set("chleb", 6.55);
+  sklep.set("godnoćś", 6.66);
+  // Tablice
+  let produkty = ["chleb", "bułka", "bagietka", "ciasto", "pączek"];
+  // Zbiory
+  let produktyUnikaty = new Set();
+
+  console.log("###### Odczyt mapy! ######");
+  console.log(sklep);
+  console.log(`W sklepie dostępne jest ${sklep.size} produktów`);
+
+  sklep.set("pepsi 2l", 6.99);
+  sklep.set("bułka", 0.99);
+  sklep.set("parówki", 3.99);
+  console.log(`W sklepie dostępne jest ${sklep.size} produktów`);
+
+  console.log("###### Odczyt kluczy! ######");
+
+  for (key of sklep.keys()) {
+    console.log(key);
+  }
+
+  console.log("###### Odczyt wartości! ######");
+
+  let suma = 0;
+  let srednia = 0;
+  for (key of sklep.values()) {
+    console.log(key);
+    suma += key;
+  }
+  console.log(`Suma cen wszystkihch produktów to: ${suma.toFixed(2)} zł.`);
+  srednia = suma / sklep.size;
+  console.log(`Średnia cena produktu to: ${srednia.toFixed(2)} zł.`);
+
+  console.log("###### Odczyt produktu z wartością! ######");
+
+  for (key of sklep.keys()) {
+    console.log(`Produkt: ${key}, cena: ${sklep.get(key)} zł.`);
+  }
+
+  console.log("###### Sprawdź czy produkt jest w sklepie! ######");
+
+  for (produkt of produkty) {
+    if (sklep.has(produkt)) {
+      console.log(
+        `Sklep posiada na stanie ${produkt} w cenie ${sklep.get(produkt)} zł.`
+      );
+    } else {
+      console.log(`Nie ma produktu ${produkt} w sklepie.`);
+    }
+  }
+
+  produkty.push("chleb");
+  produkty.push("sok");
+  produkty.push("cola");
+
+  for (produkt of produkty) {
+    produktyUnikaty.add(produkt);
+  }
+
+  console.log(`Lista porduktów zawiera (z tablicy) ${produkty.length} szt.`);
+  console.log(
+    `Lista porduktów zawiera (ze zbioru)${produktyUnikaty.size} szt.`
+  );
+
+  console.log("###### Pętla for of! ######");
+
+  // Tablica
+
+  for (produkt of produkty) {
+    console.log(produkt);
+  }
+
+  // Zbiór
+
+  // Mapa
+
+  for (towar of sklep.keys()) {
+    console.log(towar);
+  }
+
+  console.log("###### Pętla for of w klasycznym ujęciu! ######");
+
+  console.log("###### Pętla for in! ######");
+
+  // Tablica
+  for (produkt in produkty) {
+    console.log(produkt);
+  }
+  // Zbiór
+
+  // Mapa
+  //Poniższa pętla nie ma zastosowania w wypadku map
+  for (towar in sklep.keys()) {
+    console.log(towar);
+  }
+
+  console.log("###### Pętla for in w klasycznym ujęciu! ######");
+</script>
